@@ -31,7 +31,7 @@
                                             <tbody>
                                                 <?php while ($pyclass02_Rows = $pyclass02->fetch()) {  ?>
                                                     <tr>
-                                                        <td><a href="#"><em class="fas <?php echo $pyclass02_Rows['fonticon']; ?> fa-tw"></em><?php echo $pyclass02_Rows['cname']; ?></a></td>
+                                                        <td><a href="drugstore.php?classid=<?php echo $pyclass02_Rows['classid']; ?>"><em class="fas <?php echo $pyclass02_Rows['fonticon']; ?> fa-tw"></em><?php echo $pyclass02_Rows['cname']; ?></a></td>
                                                     </tr>
                                                 <?php } ?>
                                             </tbody>

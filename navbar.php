@@ -8,7 +8,8 @@
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
                         <!-- 使用PHP函數方式產生類別功能 -->
-                        <?php multiList01(); ?>
+                        <?php //multiList01(); 
+                        ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#">會員註冊</a>
                         </li>
@@ -43,7 +44,8 @@
                             </ul>
                         </li>
                         <!-- 使用PHP函數方式產生類別功能 -->
-                        <?php multiList02(); ?>
+                        <?php //multiList02(); 
+                        ?>
                     </ul>
                 </div>
             </div>
@@ -71,7 +73,7 @@
                             <ul class="dropdown-menu">
                                 <?php while ($pyclass02_Rows = $pyclass02->fetch()) {  ?>
 
-                                    <li><a href="#" class="dropdown-item"><em class="fas <?php echo $pyclass02_Rows['fonticon']; ?> fa-tw"></em><?php echo $pyclass02_Rows['cname']; ?></a></li>
+                                    <li><a href="drugstore.php?classid=<?php echo $pyclass02_Rows['classid']; ?>" class="dropdown-item"><em class="fas <?php echo $pyclass02_Rows['fonticon']; ?> fa-tw"></em><?php echo $pyclass02_Rows['cname']; ?></a></li>
                                 <?php } ?>
                             </ul>
                         </li>
@@ -99,7 +101,7 @@
                         $pyclass02 = $link->query($SQLstring);
                         ?>
                         <?php while ($pyclass02_Rows = $pyclass02->fetch()) {  ?>
-                            <li><a class="dropdown-item" href="#">
+                            <li><a class="dropdown-item" href="drugstore.php?classid=<?php echo $pyclass02_Rows['classid']; ?>">
                                     <em class="fas <?php echo $pyclass02_Rows['fonticon']; ?> fa-tw"></em><?php echo $pyclass02_Rows['cname']; ?>
                                 </a></li>
                         <?php } ?>
