@@ -27,9 +27,6 @@
                     <?php require_once("hot.php"); ?>
                 </div>
                 <div class="col-md-10">
-                    <!-- 引入廣告輪播 -->
-                    <?php require_once("carousel.php"); ?>
-                    <hr>
                     <!-- 引入 product藥粧商品-->
                     <?php require_once("product_list.php"); ?>
                 </div>
