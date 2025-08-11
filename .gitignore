@@ -9,5 +9,6 @@ uploads
 bootstrap專案開發02.pdf
 *.sql
 *.png
+*.ffs_lock
 
 

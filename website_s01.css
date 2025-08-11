@@ -124,3 +124,8 @@ body {
 .breadcrumb a {
     text-decoration: none;
 }
+
+.col-md-10 nav {
+    margin-left: -10px;
+    margin-right: -10px;
+}
