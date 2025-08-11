@@ -21,11 +21,28 @@
                                     </button>
                                 </h2>
                                 <?php
+
+
+
+
+
+                                if (isset($_GET['classid'])) { //如果使用類別查詢需取得上一層類別
+                                    $SQLstring = "SELECT uplink FROM pyclass where level=2 and classid=" . $_GET['classid'];
+                                    $classid_rs = $link->query($SQLstring);
+                                    $data = $classid_rs->fetch();
+                                    $ladder = $data['uplink'];
+                                } else {
+                                    $ladder = 1;
+                                }
+
+
+
+
                                 //列出產品類別對映的第二層資料
                                 $SQLstring = sprintf("SELECT * FROM pyclass WHERE level=2 AND uplink=%d ORDER BY sort", $pyclass01_Rows['classid']);
                                 $pyclass02 = $link->query($SQLstring);
                                 ?>
-                                <div id="collapseOne<?php echo $i; ?>" class="accordion-collapse collapse <?php echo ($i == 1) ? 'show' : ''; ?>" aria-labelledby="headingOne<?php echo $i; ?>" data-bs-parent="#accordionExample">
+                                <div id="collapseOne<?php echo $i; ?>" class="accordion-collapse collapse <?php echo ($i == $ladder) ? 'show' : ''; ?>" aria-labelledby="headingOne<?php echo $i; ?>" data-bs-parent="#accordionExample">
                                     <div class="accordion-body">
                                         <table class="table">
                                             <tbody>

@@ -27,6 +27,14 @@
                     <?php require_once("hot.php"); ?>
                 </div>
                 <div class="col-md-10">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                            <li class="breadcrumb-item"><a href="#">彩妝專區</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">隔離/防曬/飾底乳</li>
+                        </ol>
+                    </nav>
+
                     <!-- 引入 product藥粧商品-->
                     <?php require_once("product_list.php"); ?>
                 </div>
