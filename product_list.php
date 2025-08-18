@@ -6,8 +6,10 @@ if (isset($_GET['pageNum_rs'])) {
     $pageNum_rs = $_GET['pageNum_rs'];
 }
 $startRow_rs = $pageNum_rs * $maxRows_rs; //計算起始位置
-
-if (isset($_GET['classid'])) {
+if (isset($_GET['level']) && $_GET['level'] == 1) {
+    //使用第一層類別查詢
+    $queryFirst = sprintf("SELECT * FROM product,product_img,pyclass WHERE p_open=1 AND product_img.sort=1 AND product.p_id=product_img.p_id AND product.classid=pyclass.classid AND pyclass.uplink='%d' ORDER BY product.p_id DESC", $_GET['classid']);
+} elseif (isset($_GET['classid'])) {
     //使用產品類別查詢
     $queryFirst = sprintf("SELECT * FROM product,product_img WHERE p_open=1 AND product_img.sort=1 AND product.p_id=product_img.p_id AND product.classid='%d' ORDER BY product.P_id DESC", $_GET['classid']);
 } else {
