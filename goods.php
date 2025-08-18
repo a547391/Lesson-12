@@ -10,6 +10,7 @@
 <head>
     <!-- 引入網頁標頭 -->
     <?php require_once("headfile.php"); ?>
+    <link rel="stylesheet" href="fancybox-2.1.7/source/jquery.fancybox.css">
 </head>
 
 <body>
@@ -44,9 +45,9 @@
                                 ?>
                                 <img id="showGoods" name="showGoods" src="product_img/<?php echo $imgList['img_file']; ?>" class="img-fluid rounded-start" alt="<?php echo $data['p_name']; ?>" title="<?php echo $data['p_name']; ?>">
                                 <div class="row mt-2">
-                                    <?php do { ?>
-                                        <div class="col-md-4"><a href="product_img/<?php echo $imgList['img_file']; ?>" rel="group" class="fancybox" title="<?php echo $data['p_name']; ?>"><img src="product_img/<?php echo $imgList['img_file']; ?>" class="img-fluid" alt="<?php echo $data['p_name']; ?>" title="<?php echo $data['p_name']; ?>"></a></div>
-                                    <?php } while ($imgList = $img_rs->fetch()); ?>
+<?php do { ?>
+<div class="col-md-4"><a href="product_img/<?php echo $imgList['img_file']; ?>" rel="group" class="fancybox" title="<?php echo $data['p_name']; ?>"><img src="product_img/<?php echo $imgList['img_file']; ?>" class="img-fluid" alt="<?php echo $data['p_name']; ?>" title="<?php echo $data['p_name']; ?>"></a></div>
+<?php } while ($imgList = $img_rs->fetch()); ?>
                                 </div>
                             </div>
                             <div class="col-md-8">
@@ -85,6 +86,7 @@
     </Section>
     <!-- 引入javascript檔-->
     <?php require_once("jsfile.php"); ?>
+    <script type="text/javascript" src="fancybox-2.1.7/source/jquery.fancybox.js"></script>
     <script type="text/javascript">
         $(function() {
             //定義在滑鼠滑過圖片檔名填入主圖src中
@@ -94,6 +96,8 @@
                     "src": imgsrc
                 });
             });
+            //將子圖片放到lightbox展示
+            $(".fancybox").fancybox();
         });
     </script>
 </body>
