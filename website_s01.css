@@ -129,3 +129,7 @@ body {
     margin-left: -10px;
     margin-right: -10px;
 }
+
+.card .row.mt-2 .col-md-4 a>img:hover {
+    border: #e600a0 1px solid;
+}
