@@ -35,7 +35,7 @@
                     ?>
                     <div class="card mb-3">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <?php
                                 //取得產品圖片檔名資料
                                 $SQLstring = sprintf("SELECT * FROM product_img WHERE product_img.p_id=%d ORDER BY sort", $_GET['p_id']);
@@ -61,8 +61,6 @@
                                                 <input type="number" id="qty" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                                             </div>
                                         </div>
-
-
                                         <div class="col-md-6">
                                             <button name="button01" id="button01" type="button" class="btn btn-success btn-lg color-success">加入購物車</button>
                                         </div>
@@ -87,6 +85,17 @@
     </Section>
     <!-- 引入javascript檔-->
     <?php require_once("jsfile.php"); ?>
+    <script type="text/javascript">
+        $(function() {
+            //定義在滑鼠滑過圖片檔名填入主圖src中
+            $(".card .row.mt-2 .col-md-4 a").mouseover(function() {
+                var imgsrc = $(this).children("img").attr("src");
+                $("#showGoods").attr({
+                    "src": imgsrc
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
