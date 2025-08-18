@@ -1,8 +1,9 @@
                     <div class="sidebar">
-                        <form action="" name="search" id="search" method="get">
+                        <?php ?>
+                        <form name="search" id="search" action="drugstore.php" method="get">
                             <div class="input-group">
-                                <input type="text" name="search_name" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn"><button class="btn btn-default" type="submit"><i class="fas fa-search fa-lg"></i></button></span>
+                                <input type="text" name="search_name" id="search_name" class="form-control" placeholder="Search..." value="<?php echo (isset($_GET['search_name'])) ? $_GET['search_name'] : ''; ?>" required>
+                                <span class=" input-group-btn"><button class="btn btn-default" type="submit"><i class="fas fa-search fa-lg"></i></button></span>
                             </div>
                         </form>
                     </div>
@@ -32,10 +33,6 @@
                                 } else {
                                     $ladder = 1;
                                 }
-
-
-
-
                                 //列出產品類別對映的第二層資料
                                 $SQLstring = sprintf("SELECT * FROM pyclass WHERE level=2 AND uplink=%d ORDER BY sort", $pyclass01_Rows['classid']);
                                 $pyclass02 = $link->query($SQLstring);
