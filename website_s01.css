@@ -133,3 +133,13 @@ body {
 .card .row.mt-2 .col-md-4 a>img:hover {
     border: #e600a0 1px solid;
 }
+
+.color_e600a0 {
+    color: #e600a0;
+}
+
+.color-success {
+    color: #FFF;
+    background-color: #28a745;
+    border-color: #28a745;
+}
