@@ -8,6 +8,7 @@ $hot = $link->query($SQLstring);
         <h3 class="card-title">站長推薦，熱銷商品</h3>
     </div>
     <?php while ($data = $hot->fetch()) { ?>
-        <img src="product_img/<?php echo $data['img_file']; ?>" class="card-img-top" alt="HOT<?php echo $data['h_sort']; ?>" title="<?php echo $data['p_name']; ?>">
+        <a href="goods.php?p_id=<?php echo $data['p_id']; ?>">
+            <img src="product_img/<?php echo $data['img_file']; ?>" class="card-img-top" alt="HOT<?php echo $data['h_sort']; ?>" title="<?php echo $data['p_name']; ?>"></a>
     <?php } ?>
 </div>
