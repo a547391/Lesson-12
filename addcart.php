@@ -22,12 +22,11 @@ if (isset($_GET['p_id']) && isset($_GET['qty'])) {
             }
             $query = "UPDATA cart SET qty='" . $qty . "' WHERE cart.cartid=" . $cart_data['cartid'];
         }
-        $result = link->query($query);
-        $retcode = array("c"=> "1","m" => '謝謝您！產品已加入購物車中');
-    }else{
-        $retcode = arrar("c"=> "0","m" => '抱歉！資料無法寫入後台資料庫，請連絡管理人員');
+        $result = $link->query($query);
+        $retcode = array("c" => "1", "m" => '謝謝您！產品已加入購物車中');
+    } else {
+        $retcode = array("c" => "0", "m" => '抱歉！資料無法寫入後台資料庫，請連絡管理人員');
     }
     echo json_encode($retcode, JSON_UNESCAPED_UNICODE);
 }
-return ;
-?>
+return;
