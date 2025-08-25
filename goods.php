@@ -59,11 +59,11 @@
                                         <div class="col-md-6">
                                             <div class="input-group input-group-lg">
                                                 <span class="input-group-text color-success" id="inputGroup-sizing-lg">數量</span>
-                                                <input type="number" id="qty" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                                                <input type="number" id="qty" name="qty" value="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <button name="button01" id="button01" type="button" class="btn btn-success btn-lg color-success">加入購物車</button>
+                                            <button name="button01" id="button01" type="button" class="btn btn-success btn-lg color-success" onclick="addcart(<?php echo $data['p_id']; ?>)">加入購物車</button>
                                         </div>
                                     </div>
                                 </div>
