@@ -36,7 +36,8 @@ $i = 1; //控制每列row產生
                     <p class="card-text"><?php echo mb_substr($pList01_Rows['p_intro'], 0, 30, "utf-8"); ?></p>
                     <p>NT<?php echo $pList01_Rows['p_price']; ?></p>
                     <a href="goods.php?p_id=<?php echo $pList01_Rows['p_id']; ?>" class="btn btn-primary">更多資訊</a>
-                    <a href="#" class="btn btn-success">放購物車</a>
+                    <!-- <a href="#" class="btn btn-success">放購物車</a> -->
+                    <button type="button" id="button01[]" name="button01[]" class="btn btn-success" onclick="addcart(<?php echo $pList01_Rows['p_id']; ?>)">加入購物車</button>
                 </div>
             </div>
             <?php if (($i % 4 == 0) || $i == $pList01->rowCount()) { ?>
