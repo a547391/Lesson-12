@@ -22,8 +22,14 @@
                                     </button>
                                 </h2>
                                 <?php
+                                if (isset($_GET['p_id'])) {  //如果使用產品查詢，需取得類別編號上一層類別
+                                    $SQLstring = SPRINTF("SELECT uplink FROM pyclass,product WHERE pyclass.classid=product.classid AND p_id=%d", $_GET['p_id']);
+                                    $classid_rs = $link->query($SQLstring);
+                                    $data = $classid_rs->fetch();
+                                    $ladder = $data['uplink'];
+                                }
                                 //使用第一層類別查詢
-                                if (isset($_GET['level']) && $_GET['level'] == 1) {
+                                elseif (isset($_GET['level']) && $_GET['level'] == 1) {
                                     $ladder = $_GET['classid'];
                                 } elseif (isset($_GET['classid'])) { //如果使用類別查詢需取得上一層類別
                                     $SQLstring = "SELECT uplink FROM pyclass where level=2 and classid=" . $_GET['classid'];
